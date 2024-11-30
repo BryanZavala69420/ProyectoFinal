@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalle del Anuncio</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Detalle del Anuncio</h1>
+
+    <div th:if="${anuncios != null}">
+        <p><strong>Nombre:</strong> <span th:text="${anuncios.nombre}">Nombre</span></p>
+        <p><strong>Asunto:</strong> <span th:text="${anuncios.asunto}">Asunto</span></p>
+        <p><strong>Comentario:</strong> <span th:text="${anuncios.comentario}">Comentario</span></p>
+    </div>
+
+    <div th:if="${anuncios == null}">
+        <p>No se encontró el anuncio.</p>
+    </div>
+
+    <a href="/">Volver a la Lista</a>
+</body>
+</html>
