@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1> Anuncios!!! </h1>
+        <br>
+            <table class="table" > 
+                <thead class="table">
+                    <tr>
+                        <th> Nombre </th>
+                        <th> Asunto </th>
+                        <th> Comentario </th>
+
+                    </tr>
+
+
+
+                </thead>
+
+                <tbody>
+                    <tr th:each="anuncios : ${anuncios}">
+                        <td th:text="${anuncios.nombre}" > Nombre </td>
+                        <td  th:text="${anuncios.asunto}"> Asunto </td>
+                        <td th:text="${anuncios.comentario}" > Comentario </td>
+
+                    </tr>
+
+
+
+
+                </tbody>
+
+
+
+
+            </table>
+
+
+        <br>
+        <a href="/anuncios"> Regresar </a>
+    </body>
+</html>

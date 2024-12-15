@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nuevo Anuncio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Guardar el valor en localStorage
+        function GuardameEstaPuto() {
+            const nombre = document.getElementById('nombre').value;
+            localStorage.setItem('nombre', nombre); // Guardar en el navegador
+        }
+
+        // Cargar el valor desde localStorage al cargar la página
+        function CargarElPincheNombre() {
+            const nombre = localStorage.getItem('nombre');
+            if (nombre) {
+                document.getElementById('nombre').value = nombre;
+            }
+        }
+    </script>
+</head>
+<body onload="CargarElPincheNombre()"> <!-- Cargar el nombre al iniciar -->
+    <h1>Nuevo Anuncio</h1>
+    <form th:action="@{/new}" method="post" onsubmit="guardarNombre()">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+        <br>
+        <label for="asunto">Asunto:</label>
+        <input type="text" id="asunto" name="asunto">
+        <br>
+        <label for="comentario">Comentario:</label>
+        <input type="text" id="comentario" name="comentario">
+        <br>
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>

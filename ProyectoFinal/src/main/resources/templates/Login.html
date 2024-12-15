@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div th:if="${param.error}">
+            Usuario o contraseña invalidos.
+            </div>
+                <div th:if="${param.logout}">
+            te has deslogeado
+            </div>
+        <form th:action="@{/Login}"method="post">
+            <div>
+                <label>Usuario: <input type="text" name="username"></label>
+            </div>
+            <div>
+                <label>Contraseña: <input type="password" name="password"></label>
+            </div>
+            <div>
+                <input type="submit" name="Sign in">
+            </div>
+        </form>
+    </body>
+</html>
